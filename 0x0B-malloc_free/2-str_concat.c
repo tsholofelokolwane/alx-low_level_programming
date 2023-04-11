@@ -3,13 +3,12 @@
 #include <stdio.h>
 
 /**
- * str_concat - Concatenate two strings of any size
- * @s1: the first string to concatenate
- * @s2: the second string to concatenate
- *
- * Return: the two strings concatenated
- */
-
+  * str_concat - Concatenates two strings of any size
+  * @s1: the first string to concatenate
+  * @s2: the second string to concatenate
+  *
+  * Return: the two strings concatenated
+  */
 char *str_concat(char *s1, char *s2)
 {
 	int i = 0, j = 0, k = 0, l = 0;
@@ -27,7 +26,7 @@ char *str_concat(char *s1, char *s2)
 	while (s2[j])
 		j++;
 
-	l = l + j;
+	l = i + j;
 	s = malloc((sizeof(char) * l) + 1);
 
 	if (s == NULL)
