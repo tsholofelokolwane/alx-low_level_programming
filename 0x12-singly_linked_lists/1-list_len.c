@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * list_len: number of elements in linked list
+ * list_len - number of elements in linked list
  * @h: head of node
  *
  * Return: count of nodes
