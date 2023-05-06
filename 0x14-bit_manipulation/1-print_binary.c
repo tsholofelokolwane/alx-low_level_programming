@@ -13,11 +13,12 @@ void print_binary(unsigned long int n)
 {
 	int i;
 	unsigned long int j, k, andmask;
+	int bits = sizeof(unsigned long int) * 8;
 
-	for (i = sizeof(unsigned long int) * 8 - 1; i >= 0; i--)
+	for (i = bits - 1; i >= 0; i--)
 	{
 		j = i;
-		andmask = 1 << j;
+		andmask = 1UL << j;
 		k = n & andmask;
 
 		if (k == 0)
