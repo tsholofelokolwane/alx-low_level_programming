@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <string.h>
+#include <sys/stat.h>
 
 /**
  * create_file - function that creates a file
@@ -18,6 +19,7 @@ int create_file(const char *filename, char *text_content)
 {
 	FILE *fp;
 	size_t len = 0;
+	mode_t mode = S_IRUSR | S_IWUSR;
 
 	if (filename == NULL)
 	{
@@ -37,6 +39,11 @@ int create_file(const char *filename, char *text_content)
 	}
 
 	fclose(fp);
+
+	if (chmod(filename, mode) != 0)
+	{
+		return (-1);
+	}
 
 	return (1);
 }
